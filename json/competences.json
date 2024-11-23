@@ -1,0 +1,38 @@
+[
+    {
+        "name": "HTML/CSS",
+        "progress": 90
+    },
+    {
+        "name": "JavaScript",
+        "progress": 38
+    },
+    {
+        "name": "Python",
+        "progress": 85
+    },
+    {
+        "name": "C++",
+        "progress": 70
+    },
+    {
+        "name": "SQL",
+        "progress": 65
+    },
+    {
+        "name": "GraphQL",
+        "progress": 35
+    },
+    {
+        "name": "Bash",
+        "progress": 65
+    },
+    {
+        "name": "ExtendScript",
+        "progress": 25
+    },
+    {
+        "name": "PHP",
+        "progress": 75
+    }
+]
