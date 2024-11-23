@@ -1,0 +1,291 @@
+/* 1. Variables globales */
+$primary-color: #ff0000; /* Rouge vif */
+$secondary-color: #444444; /* Gris sombre */
+$background-color: #1a1a1a; /* Fond noir-gris */
+$text-color: #e0e0e0; /* Gris clair */
+$font-family: 'Poppins', sans-serif;
+
+/* 2. Styles globaux */
+body {
+    font-family: $font-family;
+    background-color: $background-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: $primary-color; /* Rouge vif pour les titres */
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* 3. Header */
+/* Navbar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    transition: background 0.3s ease, padding 0.3s ease;
+
+    // Par défaut : transparent
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    padding: 1rem 0;
+
+    &.scrolled {
+        // Dégradé noir → transparent quand on scroll
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+        padding: 0.5rem 0;
+    }
+
+    .navbar-brand img {
+        max-height: 50px;
+
+        @media (min-width: 992px) {
+            max-height: 70px;
+        }
+    }
+
+    .nav-link {
+        color: white;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+// Accueil
+#Accueil {
+    position: relative;
+    z-index: 1; /* En dessous de la navbar */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    .position-absolute {
+        position: relative;
+    }
+
+    .position-absolute img {
+        position: relative;
+        z-index: -1; /* L'image reste derrière tout */
+    }
+
+    .position-absolute::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Voile noir avec opacité 60% */
+        z-index: 1; /* Le voile est au-dessus de l'image */
+        pointer-events: none; /* Empêche toute interaction avec le voile */
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Pour améliorer la lisibilité */
+        z-index: 2; /* S'assure que le texte est au-dessus */
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Amélioration de contraste */
+        z-index: 2; /* S'assure que le texte est au-dessus */
+    }
+}
+
+
+
+
+/* 4. Sections */
+section {
+    padding: 4rem 0;
+    background-color: $background-color; /* Fond noir-gris */
+    color: $text-color;
+
+    &.about-section,
+    &.skills-section,
+    &.projects-section {
+        text-align: center;
+    }
+
+    img {
+        max-width: 150px;
+        margin: 0 auto 1rem;
+    }
+
+    h2 {
+        color: $primary-color;
+    }
+}
+
+/* Skills Section */
+.skills-section .progress-bar {
+    background-color: $primary-color;
+}
+
+/* 5. Footer */
+footer {
+    background-color: $secondary-color;
+    color: $text-color;
+    padding: 1rem 0;
+
+    a {
+        color: $primary-color;
+
+        &:hover {
+            color: lighten($primary-color, 10%);
+        }
+    }
+}
+
+/* Projets */
+.project-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    background-color: transparent; // Suppression du fond coloré
+    cursor: pointer;
+    width: 100%; // Occupe tout l'espace disponible
+    aspect-ratio: 1 / 1; // Rend tous les carrés de même taille
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        transition: transform 0.3s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // S'assure que l'image remplit le carré sans distorsion
+        border-radius: 8px;
+        display: block;
+    }
+
+    &:hover img {
+        transform: scale(1.1); // Zoom au survol
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); // Voile noir semi-transparent
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $text-color;
+
+    h5,
+    p {
+        margin: 0;
+        color: $text-color; // Texte en gris clair
+    }
+}
+
+.project-item:hover .overlay {
+    opacity: 1; // Affiche l'overlay au survol
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+        background-color: lighten($primary-color, 10%);
+        border-color: lighten($primary-color, 10%);
+    }
+}
+
+
+// Pop Ups
+.modal-fullscreen {
+    background-color: rgba(0, 0, 0, 0.9); /* Assombrit le fond du modal */
+}
+
+.popup-background {
+    position: relative; /* Nécessaire pour positionner le texte */
+    height: 100vh; /* L'image prend toute la hauteur de l'écran */
+    background-color: black; /* Sécurité si l'image tarde à charger */
+}
+
+.popup-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adapte l'image à l'écran */
+}
+
+.popup-text {
+    position: absolute;
+    bottom: 2rem; /* Positionne le texte à 2rem du bas */
+    right: 2rem; /* Positionne le texte à 2rem de la droite */
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour la lisibilité */
+    color: #ffffff; /* Texte blanc */
+    padding: 1.5rem;
+    border-radius: 10px; /* Coins arrondis pour un design moderne */
+    max-width: 400px; /* Limite la largeur du texte */
+    z-index: 10; /* Assure que le texte est au-dessus de l'image */
+}
+
+.popup-text h5 {
+    color: #ff0000; /* Rouge vif pour le titre */
+    margin-bottom: 1rem;
+}
+
+.popup-text a {
+    color: #ff0000;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.popup-text button {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: #ff0000;
+        color: black;
+    }
+}
+

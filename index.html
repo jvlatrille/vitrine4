@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jules VINET LATRILLE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="icon" href="img/logo_noir.png" type="image/png">
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+
+<body class="size-1140">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="#Accueil">
+                <img src="img/logo_noir.png" alt="Logo Noir" style="width: 100px; height: 100px; object-fit: cover;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Profil">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Competences">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#MeContacter">Me contacter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Header -->
+    <header id="Accueil" class="main-header vh-100 position-relative">
+        <div class="position-absolute top-0 start-0 w-100 h-100">
+            <img src="img/fond_header.jpg" alt="Magnifique en-tête" class="w-100 h-100 object-fit-cover">
+        </div>
+        <div
+            class="position-relative text-center text-white d-flex flex-column justify-content-center align-items-center h-100">
+            <h1 class="display-4 fw-bold">Jules VINET LATRILLE</h1>
+            <p class="lead mt-3">
+                <strong>Étudiant en première année de BUT Informatique à Anglet</strong><br><br>
+                Voici mon portfolio.<br>
+                Dans celui-ci, vous trouverez une documentation de mon développement de compétences tout au long de
+                mon parcours en BUT. Il sert à consigner mes progrès et à présenter mes niveaux de compétences.
+            </p>
+        </div>
+    </header>
+
+    <section class="about-section text-center py-5" id="Profil">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="mb-4">Présentation</h2>
+            <hr class="w-50 mx-auto mb-4">
+            <p class="fs-5">
+                Bonjour, moi c'est Jules.<br>
+                Je suis un étudiant en 2ème année de BUT Informatique, passionné par le monde du numérique depuis tout
+                petit.<br>
+                Je maîtrise beaucoup de langages de programmation tels que Python, C++, Bash, ou encore des langages web
+                tels que le HTML, CSS, JavaScript, et PHP.<br>
+                J'ai réalisé de nombreux projets, personnels comme professionnels, que vous pouvez retrouver dans ma
+                section
+                Portfolio, et dans mes <a href="https://github.com/jvlatrille" target="_blank">repos GitHub</a>.
+            </p>
+
+            <!-- Blocs d'informations -->
+            <div class="row text-center mt-5">
+                <!-- Bloc Parcours scolaire -->
+                <div class="col-md-4 mb-4">
+                    <img src="img/scolaire.png" alt="Parcours scolaire" class="img-fluid mb-3"
+                        style="max-height: 150px;">
+                    <h3>Parcours scolaire</h3>
+                    <p>Collège : Errobi, Cambo-les-Bains<br>Lycée : Cassin, Bayonne<br>BUT : Informatique, Anglet</p>
+                </div>
+
+                <!-- Bloc Mes ambitions -->
+                <div class="col-md-4 mb-4">
+                    <img src="img/ambitions.png" alt="Mes ambitions" class="img-fluid mb-3" style="max-height: 150px;">
+                    <h3>Mes ambitions</h3>
+                    <p>Gagner un maximum d'argent</p>
+                </div>
+
+                <!-- Bloc Adjectifs pour me qualifier -->
+                <div class="col-md-4 mb-4">
+                    <img src="img/adjectifs.png" alt="Adjectifs pour me qualifier" class="img-fluid mb-3"
+                        style="max-height: 150px;">
+                    <h3>Adjectifs pour me qualifier</h3>
+                    <p>Calme, sérieux, attentif, à l'écoute, efficace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skills-section py-5" id="Competences">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="text-center mb-4">Mes compétences</h2>
+            <hr class="w-50 mx-auto mb-5">
+
+            <!-- Liste des compétences -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">HTML/CSS</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                            aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">JavaScript</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 38%;" aria-valuenow="38"
+                            aria-valuemin="0" aria-valuemax="100">38%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">Python</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                            aria-valuemin="0" aria-valuemax="100">85%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">C++</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100">70%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">SQL</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 65%;" aria-valuenow="65"
+                            aria-valuemin="0" aria-valuemax="100">65%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">GraphQL</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 35%;" aria-valuenow="35"
+                            aria-valuemin="0" aria-valuemax="100">35%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">Bash</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 65%;" aria-valuenow="65"
+                            aria-valuemin="0" aria-valuemax="100">65%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">ExtendScript</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <span class="fw-bold">PHP</span>
+                    <div class="progress mt-2">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100">75%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Téléchargement du CV -->
+            <div class="text-center mt-5">
+                <img src="doc/CV.png" alt="CV de Jules VINET LATRILLE" class="img-fluid mb-3" style="max-width: 200px;">
+                <br>
+                <a href="doc/CV.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects-section py-5" id="Portfolio">
+        <div class="container">
+            <!-- Titre de la section -->
+            <h2 class="text-center mb-4">Mon portfolio</h2>
+            <hr class="w-50 mx-auto mb-5">
+
+            <!-- Liste des projets -->
+            <div class="row gy-4">
+                <!-- Projet 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Elona')">
+                        <img src="img/portfolio/Elona_pfp_thumb.png" class="img-fluid rounded" alt="Elona project">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Elona</h5>
+                            <p class="text-white text-center">Elona est une application Web écrite en python dédiée à
+                                Discord.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Lecteur de diaporama')">
+                        <img src="img/portfolio/livre_photo_thumb.jpg" class="img-fluid rounded"
+                            alt="Lecteur de diaporama">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Lecteur de diaporama</h5>
+                            <p class="text-white text-center">Un lecteur de diaporama en C++ à l'aide de QtCreator.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Navigateur dans Bayonne')">
+                        <img src="img/portfolio/bayonne_map_thumb.png" class="img-fluid rounded" alt="Map Bayonne">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Navigateur dans Bayonne</h5>
+                            <p class="text-white text-center">Calculateur d'itinéraire interactif en Python.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Adobe')">
+                        <img src="img/portfolio/After_effect_thumb.png" class="img-fluid rounded" alt="Logo AE">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Adobe</h5>
+                            <p class="text-white text-center">Montages vidéo et photo avec After Effect, Photoshop, et
+                                Premiere Pro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Site de peluches en PHP')">
+                        <img src="img/portfolio/site_php_thumb.png" class="img-fluid rounded"
+                            alt="Site de peluches en PHP">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Site de peluches en PHP</h5>
+                            <p class="text-white text-center">Un site web réalisé en HTML, Bootstrap, et PHP.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Lorem Ipsum Dolor 2')">
+                        <img src="img/portfolio/jsp_thumb.jpg" class="img-fluid rounded" alt="Jsp">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Lorem Ipsum Dolor 2</h5>
+                            <p class="text-white text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate
+                                velit esse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Lorem Ipsum Dolor 3')">
+                        <img src="img/portfolio/jsp_thumb.jpg" class="img-fluid rounded" alt="Jsp">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Lorem Ipsum Dolor 3</h5>
+                            <p class="text-white text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate
+                                velit esse.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="project-item position-relative" onclick="openPopup('Lorem Ipsum Dolor 4')">
+                        <img src="img/portfolio/jsp_thumb.jpg" class="img-fluid rounded" alt="Jsp">
+                        <div class="overlay d-flex flex-column justify-content-center align-items-center">
+                            <h5 class="text-white">Lorem Ipsum Dolor 4</h5>
+                            <p class="text-white text-center">Duis autem vel eum iriure dolor in hendrerit in vulputate
+                                velit esse.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modèle PopUp -->
+    <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupTitle" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content p-0 border-0">
+                <!-- Image de fond -->
+                <div class="popup-background w-100 h-100 position-relative">
+                    <img id="popupImage" src="" alt="Image du projet" class="w-100 h-100 object-fit-cover">
+                    <!-- Contenu texte -->
+                    <div
+                        class="popup-text position-absolute top-0 end-0 w-50 h-100 d-flex flex-column justify-content-center p-5">
+                        <h5 id="popupTitle" class="display-5 fw-bold mb-4"></h5>
+                        <div id="popupContent" class="fs-5 mb-4"></div>
+                        <button type="button" class="btn btn-dark w-50" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const popupContents = {
+            'Elona': {
+                image: 'img/fondPopUp/elona_fond.png',
+                content: `Elona (Emotive Learning Operational Neural Assistant) est une application Web écrite en python dédiée à Discord utilisable par tout utilisateur. Initialement, elle devait être une IA, mais manquant de ressources et de connaissances, j\'ai décidé de la transformer en bot Discord (plus simple pour l\'hébergement, la maintenance, et l\'utilisation). <br> <a href="https://github.com/jvlatrille/Elona" target="_blank">Lien vers le projet</a> <br> <a href="https://github.com/jvlatrille/botPromo" target="_blank">Lien vers un autre bot discord que j\'ai codé pour ma promo</a>`
+            },
+            'Lecteur de diaporama': {
+                image: 'img/diaporama.jpg',
+                content: `Lors de ma fin de première année de BUT, j\'ai réalisé un lecteur de diaporama en C++ à l\'aide du logiciel Qt Creator. Ce projet m\'a permis de découvrir le C++ et de m\'améliorer en programmation orientée objet.  <br> <a href="https://github.com/jvlatrille/LecteurDiaporama" target="_blank">Lien vers le projet</a>`
+            },
+            'Navigateur dans Bayonne': {
+                image: 'img/bayonne.jpg',
+                content: `Lors de ma première année de BUT, en groupe, nous avons réalisé un calculateur d\'itinéraire le plus court interactif en python dans les rues de Bayonne. Ce projet m\'a permis de découvrir le langage python et de m\'améliorer en programmation, mais aussi en programmation de graphes et parcours de chemins le plus court.  <br> <a href="https://github.com/jvlatrille/S2.02-Graphes" target="_blank">Lien vers le projet</a>`
+            },
+            'Adobe': {
+                image: 'img/adobe.jpg',
+                content: `Je suis passionné par le montage vidéo et photo. Pendant mon temps libre, j\'ai appris à utiliser des logiciels Adobe tels que : After Effect, Photoshop, Premiere Pro pour m\'amuser. Ces logiciels m\'ont permis de réaliser des montages vidéo et photo, que j\'ai posté sur ma <a href="https://www.youtube.com/@Lord_404" target="_blank">chaîne YouTube</a>.`
+            },
+            'Site de peluches en PHP': {
+                image: 'img/peluches.jpg',
+                content: `Pour un travail en PHP, j\'ai du réaliser un site web de vente portant sur le sujet de mon choix, et ayant des caractéristiques précises (comme par exemple une gestion des utilisateurs, l\'ajout et modification de produits, la gestion d\'un panier et d\'un paiement). <br> <a href="https://github.com/jvlatrille/ProjetPHP" target="_blank">Lien vers le projet</a>`
+            },
+            'Lorem Ipsum Dolor 2': {
+                image: 'img/lorem2.jpg',
+                content: `Un exemple de projet avec du contenu fictif.`
+            },
+            'Lorem Ipsum Dolor 3': {
+                image: 'img/lorem3.jpg',
+                content: `Un autre exemple de projet fictif.`
+            },
+            'Lorem Ipsum Dolor 4': {
+                image: 'img/lorem4.jpg',
+                content: `Encore un projet fictif avec du contenu exemple.`
+            }
+        };
+
+        function openPopup(projectName) {
+            const popup = popupContents[projectName];
+            if (popup) {
+                document.getElementById('popupImage').src = popup.image;
+                document.getElementById('popupTitle').innerText = projectName;
+                document.getElementById('popupContent').innerHTML = popup.content;
+
+                const modal = new bootstrap.Modal(document.getElementById('popupModal'));
+                modal.show();
+            }
+        }
+    </script>
+
+
+
+
+    <section class="contact-section py-5" id="MeContacter">
+        <div class="container">
+            <h2 class="text-center mb-4">Me Contacter</h2>
+            <p class="text-center fs-5">Mon adresse mail :
+                <a href="mailto:julesvinet64@gmail.com">julesvinet64@gmail.com</a>
+            </p>
+            <hr class="w-50 mx-auto mb-5">
+
+            <!-- Formulaire de contact -->
+            <form id="contactForm" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom :</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message :</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+            </form>
+
+            <!-- Réponse au formulaire -->
+            <div id="formResponse" class="text-center mt-4"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const formResponse = document.getElementById('formResponse');
+
+            if (name && email && message) {
+                formResponse.innerHTML = `<p class="text-success">Merci pour votre message, ${name} ! Nous vous contacterons bientôt.</p>`;
+                document.getElementById('contactForm').reset();
+            } else {
+                formResponse.innerHTML = '<p class="text-danger">Veuillez remplir tous les champs.</p>';
+            }
+        });
+    </script>
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <!-- Informations de copyright -->
+            <p class="mb-3">&copy; 2024 Jules VINET LATRILLE. Tous droits réservés.</p>
+
+            <!-- Logos des réseaux sociaux -->
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://github.com/jvlatrille" target="_blank" aria-label="GitHub">
+                    <img src="img/github_logo.png" alt="GitHub" style="width: 40px;">
+                </a>
+                <a href="https://www.linkedin.com/in/julesvinetlatrille/" target="_blank" aria-label="LinkedIn">
+                    <img src="img/linkedin_logo.png" alt="LinkedIn" style="width: 40px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
