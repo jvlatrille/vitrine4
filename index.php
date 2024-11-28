@@ -11,7 +11,7 @@
     <script src="js/jquery-1.8.3.min.js"></script>
 </head>
 
-<body class="size-1140">
+< class="size-1140">
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container">
@@ -175,18 +175,17 @@
     </script>
 
 
-
-
     <section class="contact-section py-5" id="MeContacter">
         <div class="container">
             <h2 class="text-center mb-4">Me Contacter</h2>
-            <p class="text-center fs-5">Mon adresse mail :
+            <p class="text-center fs-5">
+                Mon adresse mail :
                 <a href="mailto:julesvinet64@gmail.com">julesvinet64@gmail.com</a>
             </p>
             <hr class="w-50 mx-auto mb-5">
 
             <!-- Formulaire de contact -->
-            <form id="contactForm" class="mx-auto" style="max-width: 600px;">
+            <form id="contactForm" class="mx-auto" style="max-width: 600px;" action="php/send_contact.php" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nom :</label>
                     <input type="text" id="name" name="name" class="form-control" required>
@@ -205,26 +204,64 @@
             <!-- Réponse au formulaire -->
             <div id="formResponse" class="text-center mt-4"></div>
         </div>
+
+        <!-- Popup Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Message envoyé</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Votre message a été envoyé avec succès. Merci de m'avoir contacté !
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        document.getElementById('contactForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
+            const formData = new FormData(this);
             const formResponse = document.getElementById('formResponse');
 
-            if (name && email && message) {
-                formResponse.innerHTML = `<p class="text-success">Merci pour votre message, ${name} ! Nous vous contacterons bientôt.</p>`;
-                document.getElementById('contactForm').reset();
-            } else {
-                formResponse.innerHTML = '<p class="text-danger">Veuillez remplir tous les champs.</p>';
+            try {
+                const response = await fetch('php/send_contact.php', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    // Affiche le popup de succès
+                    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                    successModal.show();
+
+                    // Réinitialise le formulaire
+                    this.reset();
+                    formResponse.innerHTML = '';
+                } else {
+                    formResponse.innerHTML = `<p class="text-danger">${result.message}</p>`;
+                }
+            } catch (error) {
+                formResponse.innerHTML = `<p class="text-danger">Une erreur est survenue. Veuillez réessayer plus tard.</p>`;
             }
         });
     </script>
+
+
+
+
+
+
+
+    <!-- footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <!-- Informations de copyright -->
@@ -245,6 +282,6 @@
     <!-- Scripts -->
     <script src="js/script.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    </body>
 
 </html>
