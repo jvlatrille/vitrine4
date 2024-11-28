@@ -12,7 +12,7 @@
         "thumbnail": "img/portfolio/livre_photo_thumb.jpg",
         "alt": "Lecteur de diaporama",
         "description": "Un lecteur de diaporama en C++ à l'aide de QtCreator.",
-        "popupImage": "img/diaporama.jpg",
+        "popupImage": "img/fondPopUp/diaporama_fond.jpg",
         "popupContent": "Lors de ma fin de première année de BUT, j'ai réalisé un lecteur de diaporama en C++ à l'aide du logiciel Qt Creator. Ce projet m'a permis de découvrir le C++ et de m'améliorer en programmation orientée objet. <br> <a href='https://github.com/jvlatrille/LecteurDiaporama' target='_blank'>Lien vers le projet</a>"
     },
     {
@@ -20,7 +20,7 @@
         "thumbnail": "img/portfolio/bayonne_map_thumb.png",
         "alt": "Map Bayonne",
         "description": "Calculateur d'itinéraire interactif en Python.",
-        "popupImage": "img/bayonne.jpg",
+        "popupImage": "img/fondPopUp/bayonne_fond.png",
         "popupContent": "Un calculateur d'itinéraire interactif en python dans les rues de Bayonne. Ce projet m'a permis de découvrir le langage python et de m'améliorer en programmation, mais aussi en programmation de graphes et parcours de chemins le plus court. <br> <a href='https://github.com/jvlatrille/S2.02-Graphes' target='_blank'>Lien vers le projet</a>"
     },
     {
@@ -28,7 +28,7 @@
         "thumbnail": "img/portfolio/After_effect_thumb.png",
         "alt": "Logo AE",
         "description": "Montages vidéo et photo avec After Effect, Photoshop, et Premiere Pro.",
-        "popupImage": "img/adobe.jpg",
+        "popupImage": "img/fondPopUp/adobe.png",
         "popupContent": "Je suis passionné par le montage vidéo et photo. Pendant mon temps libre, j'ai appris à utiliser des logiciels Adobe tels que : After Effect, Photoshop, Premiere Pro pour m'amuser. Ces logiciels m'ont permis de réaliser des montages vidéo et photo, que j'ai posté sur ma <a href='https://www.youtube.com/@Lord_404' target='_blank'>chaîne YouTube</a>."
     },
     {
@@ -36,7 +36,7 @@
         "thumbnail": "img/portfolio/site_php_thumb.png",
         "alt": "Site de peluches en PHP",
         "description": "Un site web réalisé en HTML, Bootstrap, et PHP.",
-        "popupImage": "img/peluches.jpg",
+        "popupImage": "img/fondPopUp/peluches.png",
         "popupContent": "Pour un travail en PHP, j'ai dû réaliser un site web de vente portant sur le sujet de mon choix, et ayant des caractéristiques précises (comme par exemple une gestion des utilisateurs, l'ajout et modification de produits, la gestion d'un panier et d'un paiement). <br> <a href='https://github.com/jvlatrille/ProjetPHP' target='_blank'>Lien vers le projet</a>"
     }
 ]
