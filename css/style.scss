@@ -1,15 +1,29 @@
-/* 1. Variables globales */
-$primary-color: #ff0000; /* Rouge vif */
-$secondary-color: #444444; /* Gris sombre */
-$background-color: #1a1a1a; /* Fond noir-gris */
-$text-color: #e0e0e0; /* Gris clair */
-$font-family: 'Poppins', sans-serif;
+/*
+sass css/style.scss css/style.css --watch  
+*/
+
+/* 1. Variables globales dynamiques */
+body.light-mode {
+    --primary-color: #00aaff; /* Bleu vif */
+    --secondary-color: #282c34; /* Gris très sombre */
+    --background-color: #f4f4f9; /* Gris clair (presque blanc) */
+    --text-color: #333333; /* Noir-gris lisible */
+    --font-family: 'Inter', sans-serif; /* Police moderne et lisible */
+}
+
+// body.dark-mode {
+//     --primary-color: #ff0000; /* Rouge vif */
+//     --secondary-color: #444444; /* Gris sombre */
+//     --background-color: #1a1a1a; /* Fond noir-gris */
+//     --text-color: #e0e0e0; /* Gris clair */
+//     --font-family: 'Poppins', sans-serif;
+// }
 
 /* 2. Styles globaux */
 body {
-    font-family: $font-family;
-    background-color: $background-color;
-    color: $text-color;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
@@ -20,19 +34,16 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: $primary-color; /* Rouge vif pour les titres */
+    color: var(--primary-color);
 }
 
 a {
-    color: $primary-color;
-    text-decoration: none;
-
+    color: var(--primary-color);
     &:hover {
         text-decoration: underline;
     }
 }
+
 
 /* 3. Header */
 /* Navbar */
@@ -66,13 +77,15 @@ a {
         color: white;
 
         &:hover {
-            color: $primary-color;
+            color: --primary-color;
         }
     }
 }
 
 // Accueil
 #Accueil {
+    background-color: var(--background-color);
+    color: var(--text-color);
     position: relative;
     z-index: 1; /* En dessous de la navbar */
     height: 100vh;
@@ -80,7 +93,6 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
 
     .position-absolute {
         position: relative;
@@ -127,8 +139,8 @@ a {
 /* 4. Sections */
 section {
     padding: 4rem 0;
-    background-color: $background-color; /* Fond noir-gris */
-    color: $text-color;
+    background-color: --background-color; /* Fond noir-gris */
+    color: --text-color;
 
     &.about-section,
     &.skills-section,
@@ -142,27 +154,22 @@ section {
     }
 
     h2 {
-        color: $primary-color;
+        color: --primary-color;
     }
 }
 
 /* Skills Section */
 .skills-section .progress-bar {
-    background-color: $primary-color;
+    background-color: --primary-color;
 }
 
 /* 5. Footer */
 footer {
-    background-color: $secondary-color;
-    color: $text-color;
-    padding: 1rem 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 
     a {
-        color: $primary-color;
-
-        &:hover {
-            color: lighten($primary-color, 10%);
-        }
+        color: var(--primary-color);
     }
 }
 
@@ -207,28 +214,23 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: $text-color;
+    color: --text-color;
 
     h5,
     p {
         margin: 0;
-        color: $text-color; // Texte en gris clair
+        color: --text-color; // Texte en gris clair
     }
 }
 
-.project-item:hover .overlay {
-    opacity: 1; // Affiche l'overlay au survol
+.project-item .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Boutons */
 .btn-primary {
-    background-color: $primary-color;
-    border-color: $primary-color;
-
-    &:hover {
-        background-color: lighten($primary-color, 10%);
-        border-color: lighten($primary-color, 10%);
-    }
+    background-color: --primary-color;
+    border-color: --primary-color;
 }
 
 
@@ -262,12 +264,12 @@ footer {
 }
 
 .popup-text h5 {
-    color: #ff0000; /* Rouge vif pour le titre */
+    color: primary-color; /* Rouge vif pour le titre */
     margin-bottom: 1rem;
 }
 
 .popup-text a {
-    color: #ff0000;
+    color: primary-color;
     text-decoration: none;
 
     &:hover {
@@ -284,7 +286,7 @@ footer {
     border-radius: 5px;
 
     &:hover {
-        background-color: #ff0000;
+        background-color: primary-color;
         color: black;
     }
 }

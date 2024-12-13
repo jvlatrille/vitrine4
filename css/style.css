@@ -1,14 +1,21 @@
 @charset "UTF-8";
-/* 1. Variables globales */
-/* Rouge vif */
-/* Gris sombre */
-/* Fond noir-gris */
-/* Gris clair */
+/*
+sass css/style.scss css/style.css --watch  
+*/
+/* 1. Variables globales dynamiques */
+body.light-mode {
+  --primary-color: #00aaff; /* Bleu vif */
+  --secondary-color: #282c34; /* Gris très sombre */
+  --background-color: #f4f4f9; /* Gris clair (presque blanc) */
+  --text-color: #333333; /* Noir-gris lisible */
+  --font-family: "Inter", sans-serif; /* Police moderne et lisible */
+}
+
 /* 2. Styles globaux */
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 }
@@ -19,14 +26,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #ff0000; /* Rouge vif pour les titres */
+  color: var(--primary-color);
 }
 
 a {
-  color: #ff0000;
-  text-decoration: none;
+  color: var(--primary-color);
 }
 a:hover {
   text-decoration: underline;
@@ -60,10 +64,12 @@ a:hover {
   color: white;
 }
 #navbar .nav-link:hover {
-  color: #ff0000;
+  color: --primary-color;
 }
 
 #Accueil {
+  background-color: var(--background-color);
+  color: var(--text-color);
   position: relative;
   z-index: 1; /* En dessous de la navbar */
   height: 100vh;
@@ -71,7 +77,6 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
 }
 #Accueil .position-absolute {
   position: relative;
@@ -110,8 +115,8 @@ a:hover {
 /* 4. Sections */
 section {
   padding: 4rem 0;
-  background-color: #1a1a1a; /* Fond noir-gris */
-  color: #e0e0e0;
+  background-color: --background-color; /* Fond noir-gris */
+  color: --text-color;
 }
 section.about-section, section.skills-section, section.projects-section {
   text-align: center;
@@ -121,25 +126,21 @@ section img {
   margin: 0 auto 1rem;
 }
 section h2 {
-  color: #ff0000;
+  color: --primary-color;
 }
 
 /* Skills Section */
 .skills-section .progress-bar {
-  background-color: #ff0000;
+  background-color: --primary-color;
 }
 
 /* 5. Footer */
 footer {
-  background-color: #444444;
-  color: #e0e0e0;
-  padding: 1rem 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 footer a {
-  color: #ff0000;
-}
-footer a:hover {
-  color: #ff3333;
+  color: var(--primary-color);
 }
 
 /* Projets */
@@ -181,26 +182,22 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #e0e0e0;
+  color: --text-color;
 }
 .overlay h5,
 .overlay p {
   margin: 0;
-  color: #e0e0e0;
+  color: --text-color;
 }
 
-.project-item:hover .overlay {
-  opacity: 1;
+.project-item .overlay {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Boutons */
 .btn-primary {
-  background-color: #ff0000;
-  border-color: #ff0000;
-}
-.btn-primary:hover {
-  background-color: #ff3333;
-  border-color: #ff3333;
+  background-color: --primary-color;
+  border-color: --primary-color;
 }
 
 .modal-fullscreen {
@@ -232,12 +229,12 @@ footer a:hover {
 }
 
 .popup-text h5 {
-  color: #ff0000; /* Rouge vif pour le titre */
+  color: primary-color; /* Rouge vif pour le titre */
   margin-bottom: 1rem;
 }
 
 .popup-text a {
-  color: #ff0000;
+  color: primary-color;
   text-decoration: none;
 }
 .popup-text a:hover {
@@ -253,7 +250,7 @@ footer a:hover {
   border-radius: 5px;
 }
 .popup-text button:hover {
-  background-color: #ff0000;
+  background-color: primary-color;
   color: black;
 }
 
