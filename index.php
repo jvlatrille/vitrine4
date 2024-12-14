@@ -15,7 +15,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container">
         <a class="navbar-brand" href="#Accueil">
-            <img src="img/logo_noir.png" alt="Logo Noir" style="width: 100px; height: 100px; object-fit: cover;">
+            <img id="navbarLogo" src="" alt="Logo" style="width: 100px; height: 100px; object-fit: cover;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
     </div>
 </nav>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const toggleButton = document.getElementById("toggleMode");
         const currentMode = localStorage.getItem("theme") || "light";
 
@@ -76,9 +76,7 @@
 
 <!-- Main Header -->
 <header id="Accueil" class="main-header vh-100 position-relative">
-    <div class="position-absolute top-0 start-0 w-100 h-100">
-        <img src="img/fond_header.jpg" alt="Magnifique en-tête" class="w-100 h-100 object-fit-cover">
-    </div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 header-background"></div>
     <div
         class="position-relative text-center text-white d-flex flex-column justify-content-center align-items-center h-100">
         <h1 class="display-4 fw-bold">Jules VINET LATRILLE</h1>
