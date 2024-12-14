@@ -10,9 +10,9 @@ return [
             'encryption' => 'tls',
         ],
         'production' => [
-            'host' => 'smtp.alwaysdata.com',
-            'username' => 'tonemail@alwaysdata.net', // mail alwaysdata
-            'password' => 'tonmotdepasse', // Mot de passe alwaysdata
+            'host' => 'smtp-nomUtilisateur.alwaysdata.net',
+            'username' => 'nomUtilisateur@alwaysdata.net', // mail alwaysdata (On peut configurer une rediraction sur le site)
+            'password' => 'motdepasse',
             'port' => 587,
             'encryption' => 'tls',
         ],
