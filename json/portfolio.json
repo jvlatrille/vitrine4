@@ -5,7 +5,7 @@
         "alt": "Elona project",
         "description": "Elona est une application Web écrite en python dédiée à Discord.",
         "popupImage": "img/fondPopUp/elona_fond.png",
-        "popupContent": "Elona (Emotive Learning Operational Neural Assistant) est une application Web écrite en python dédiée à Discord utilisable par tout utilisateur. Initialement, elle devait être une IA, mais manquant de ressources et de connaissances, j'ai décidé de la transformer en bot Discord (plus simple pour l'hébergement, la maintenance, et l'utilisation). <br> <a href='https://github.com/jvlatrille/Elona' target='_blank'>Lien vers le projet</a> <br> <a href='https://github.com/jvlatrille/botPromo' target='_blank'>Lien vers un autre bot discord que j'ai codé pour ma promo</a>"
+        "popupContent": "Elona (Emotive Learning Operational Neural Assistant) est une application Web écrite en python dédiée à Discord utilisable par tout utilisateur. Initialement, elle devait être une IA, mais manquant de ressources et de connaissances, j'ai décidé de la transformer en bot Discord (plus simple pour l'hébergement, la maintenance, et l'utilisation). <br> <a href='https://github.com/jvlatrille/Elona' target='_blank'>Lien vers le projet</a> <br> <a href='https://github.com/jvlatrille/botPromo' target='_blank'>Lien vers un autre bot discord que j'ai codé pour ma promo</a> <br> <a href='https://github.com/jvlatrille/JinxBot' target='_blank'>Encore un</a>"
     },
     {
         "title": "Lecteur de diaporama",
