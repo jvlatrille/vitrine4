@@ -1,3 +1,4 @@
+<!-- A renommer en config.php -->
 <?php
 return [
     'smtp' => [
@@ -10,7 +11,7 @@ return [
         ],
         'production' => [
             'host' => 'smtp.alwaysdata.com',
-            'username' => 'tonemail@tondomaine.com', // mail alwaysdata
+            'username' => 'tonemail@alwaysdata.net', // mail alwaysdata
             'password' => 'tonmotdepasse', // Mot de passe alwaysdata
             'port' => 587,
             'encryption' => 'tls',

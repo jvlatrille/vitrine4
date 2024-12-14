@@ -6,8 +6,8 @@ require '../vendor/autoload.php';
 
 $config = include __DIR__ . '/../config.php';
 
-// Charger les paramètres SMTP pour localhost
-$smtpConfig = $config['smtp']['local'];
+// Charger les paramètres SMTP pour Alwaysdata (environnement production)
+$smtpConfig = $config['smtp']['production'];
 
 try {
     $mail = new PHPMailer(true);
@@ -16,8 +16,8 @@ try {
     $mail->isSMTP();
     $mail->Host = $smtpConfig['host'];
     $mail->SMTPAuth = true;
-    $mail->Username = $smtpConfig['username'];
-    $mail->Password = $smtpConfig['password'];
+    $mail->Username = $smtpConfig['username']; // Identifiant Alwaysdata
+    $mail->Password = $smtpConfig['password']; // Mot de passe Alwaysdata
     $mail->SMTPSecure = $smtpConfig['encryption'];
     $mail->Port = $smtpConfig['port'];
 
@@ -27,8 +27,9 @@ try {
     $message = htmlspecialchars($_POST['message']);
 
     // Configurer l'email
-    $mail->setFrom($email, $name);
-    $mail->addAddress('julesvinet64@gmail.com'); // Adresse de réception
+    $mail->setFrom($smtpConfig['username'], 'Formulaire de Contact'); // From : adresse Alwaysdata
+    $mail->addAddress('julesvinet64@gmail.com'); // Adresse de réception (Gmail)
+    $mail->addReplyTo($email, $name); // Répondre directement à l'expéditeur
     $mail->Subject = "VITRINE : Nouveau message de $name";
     $mail->Body = "Nom : $name\nEmail : $email\n\nMessage :\n$message";
 

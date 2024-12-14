@@ -202,7 +202,7 @@
     }
 </script>
 
-
+<!-- Me contacter -->
 <section class="contact-section py-5" id="MeContacter">
     <div class="container">
         <h2 class="text-center mb-4">Me Contacter</h2>
