@@ -161,8 +161,9 @@
                     const circle = wrapper.querySelector('.progress-circle');
 
                     if (circle) {
-                        // Crée le cercle dynamique avec un dégradé conique
-                        circle.style.background = `conic-gradient(#00aaff ${level}%, #ddd 0%)`;
+                        // Utilise la variable CSS pour la couleur dynamique
+                        const progressColor = getComputedStyle(document.body).getPropertyValue('--progress-circle-color').trim();
+                        circle.style.background = `conic-gradient(${progressColor} ${level}%, transparent 0%)`;
                     }
                 });
             });

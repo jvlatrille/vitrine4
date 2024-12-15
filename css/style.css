@@ -11,6 +11,7 @@ body.light-mode {
   --background-color: #f4f4f9;
   --text-color: #333333;
   --font-family: "Inter", sans-serif;
+  --progress-circle-color: #00ff00;
 }
 
 body.dark-mode {
@@ -21,6 +22,7 @@ body.dark-mode {
   --background-color: #1a1a1a;
   --text-color: #e0e0e0;
   --font-family: "Poppins", sans-serif;
+  --progress-circle-color: #00ff00;
 }
 
 /* 2. Styles globaux */
@@ -181,7 +183,7 @@ section h2 {
 
 /* Skills Section */
 .skills-section .progress-bar {
-  background-color: var(--primary-color);
+  background-color: var(#ffffff);
   transition: background-color 0.5s ease; /* Transition fluide pour les barres de progression */
 }
 
@@ -228,7 +230,7 @@ section h2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: conic-gradient(var(--primary-color) calc(var(--level) * 1%), transparent 0%);
+  background: conic-gradient(var(--progress-circle-color) calc(var(--level) * 1%), transparent 0%);
   mask: radial-gradient(circle, transparent 40%, white 41%);
   -webkit-mask: radial-gradient(circle, transparent 40%, white 41%);
   z-index: -1;
@@ -246,7 +248,7 @@ section h2 {
   transform: translate(-50%, -50%);
   font-size: 1rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--progress-circle-color);
   z-index: 2; /* Par-dessus le cercle */
   opacity: 0; /* Invisible par défaut */
   transition: opacity 0.3s ease;
