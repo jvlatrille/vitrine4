@@ -18,6 +18,7 @@ if (file_exists($jsonFile)) {
                     <div class="logo-wrapper" data-level="' . $level . '">
                         <img src="' . htmlspecialchars($appli['logo']) . '" alt="' . htmlspecialchars($appli['name']) . '" class="img-fluid app-logo">
                         <div class="progress-circle"></div>
+                        <span class="progress-text">' . $level . '%</span>
                     </div>
                     <p class="mt-2">' . htmlspecialchars($appli['name']) . '</p>
                 </div>
@@ -30,4 +31,3 @@ if (file_exists($jsonFile)) {
 } else {
     echo '<p class="text-center text-danger">Le fichier des applications est introuvable.</p>';
 }
-?>
