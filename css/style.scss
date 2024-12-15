@@ -207,6 +207,49 @@ section {
   transition: background-color 0.5s ease; /* Transition fluide pour les barres de progression */
 }
 
+
+/* Styles pour les logos */
+.skills-section .row .logo-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.skills-section .row .app-logo {
+  max-height: 100px;
+  margin: 0 auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Transition fluide */
+}
+
+.skills-section .row .logo-wrapper:hover .app-logo {
+  transform: scale(0.9); /* Dézoom léger */
+  filter: brightness(0.7); /* Assombrit l'image */
+}
+
+/* Cercle de progression */
+.skills-section .row .progress-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  background: conic-gradient(var(--primary-color) calc(var(--level) * 1%), #ddd 0%);
+  transition: opacity 0.3s ease;
+}
+
+
+.skills-section .row .logo-wrapper:hover .progress-circle {
+  opacity: 1; /* Rend le cercle visible au survol */
+}
+
+
+
+
 /* 5. Footer */
 footer {
   background-color: var(--secondary-color);

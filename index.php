@@ -141,9 +141,33 @@
         <hr class="w-50 mx-auto mb-5">
 
         <!-- Liste des compétences -->
+        <h5 class="text-center mb-4">Langages de programmation</h5>
+        <hr class="w-25 mx-auto mb-5">
         <div class="row">
             <?php include 'php/affichage_competences.php'; ?>
         </div>
+
+        <!-- Logos des applications -->
+        <br>
+        <h5 class="text-center mb-4">Applications</h5>
+        <hr class="w-25 mx-auto mb-5">
+        <?php include 'php/affichage_logos_applis.php'; ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const logos = document.querySelectorAll('.logo-wrapper');
+
+                logos.forEach(wrapper => {
+                    const level = wrapper.dataset.level; // Récupère le niveau depuis le data-attribute
+                    const circle = wrapper.querySelector('.progress-circle');
+
+                    if (circle) {
+                        // Crée le cercle dynamique avec un dégradé conique
+                        circle.style.background = `conic-gradient(#00aaff ${level}%, #ddd 0%)`;
+                    }
+                });
+            });
+        </script>
+
 
         <!-- Téléchargement du CV -->
         <div class="text-center mt-5">
@@ -153,8 +177,6 @@
         </div>
     </div>
 </section>
-
-
 
 
 <section class="projects-section py-5" id="Portfolio">

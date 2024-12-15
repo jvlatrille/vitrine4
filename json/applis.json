@@ -1,0 +1,52 @@
+[
+    {
+        "name": "VS Code",
+        "logo": "img/logos/vscode.png",
+        "level": 95
+    },
+    {
+        "name": "Qt",
+        "logo": "img/logos/qt.png",
+        "level": 80
+    },
+    {
+        "name": "Spyder",
+        "logo": "img/logos/spyder.png",
+        "level": 85
+    },
+    {
+        "name": "SketchUp",
+        "logo": "img/logos/sketchup.png",
+        "level": 70
+    },
+    {
+        "name": "Ubuntu",
+        "logo": "img/logos/ubuntu.png",
+        "level": 90
+    },
+    {
+        "name": "Linux",
+        "logo": "img/logos/linux.png",
+        "level": 90
+    },
+    {
+        "name": "Kali",
+        "logo": "img/logos/kali.png",
+        "level": 85
+    },
+    {
+        "name": "KDE",
+        "logo": "img/logos/kde.png",
+        "level": 80
+    },
+    {
+        "name": "Adobe Photoshop",
+        "logo": "img/logos/photoshop.png",
+        "level": 80
+    },
+    {
+        "name": "AfterEffect",
+        "logo": "img/logos/aftereffect.png",
+        "level": 95
+    }
+]
