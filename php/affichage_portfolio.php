@@ -1,12 +1,10 @@
 <?php
-// Charger le fichier JSON
 $jsonFile = __DIR__ . '/../json/portfolio.json';
 if (!file_exists($jsonFile)) {
     die('Le fichier JSON est introuvable.');
 }
 $projects = json_decode(file_get_contents($jsonFile), true);
 
-// Générer l'affichage
 foreach ($projects as $project) {
     echo '<div class="col-md-6 col-lg-3">';
     echo '    <div class="project-item position-relative" onclick="openPopup(this)"';
@@ -21,4 +19,3 @@ foreach ($projects as $project) {
     echo '    </div>';
     echo '</div>';
 }
-?>

@@ -11,7 +11,7 @@
     <script src="js/jquery-1.8.3.min.js"></script>
 </head>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent">
     <div class="container">
         <a class="navbar-brand" href="#Accueil">
@@ -38,7 +38,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#MeContacter">Me contacter</a>
                 </li>
-                <!-- Bouton pour changer de mode -->
                 <li class="nav-item">
                     <button id="toggleMode" class="btn btn-outline-light">Mode sombre</button>
                 </li>
@@ -51,30 +50,24 @@
         const toggleButton = document.getElementById("toggleMode");
         const currentMode = localStorage.getItem("theme") || "light";
 
-        // Appliquer le mode actuel
         document.body.classList.add(currentMode + "-mode");
 
-        // Ajuster le texte du bouton
         toggleButton.textContent = currentMode === "light" ? "Mode sombre" : "Mode clair";
 
-        // Écouteur pour basculer entre les modes
         toggleButton.addEventListener("click", () => {
             const isDarkMode = document.body.classList.contains("dark-mode");
             document.body.classList.toggle("light-mode", isDarkMode);
             document.body.classList.toggle("dark-mode", !isDarkMode);
 
-            // Sauvegarder la préférence dans le local storage
             const newMode = isDarkMode ? "light" : "dark";
             localStorage.setItem("theme", newMode);
 
-            // Mettre à jour le texte du bouton
             toggleButton.textContent = isDarkMode ? "Mode sombre" : "Mode clair";
         });
     });
 </script>
 
-
-<!-- Main Header -->
+<!-- HEADER -->
 <header id="Accueil" class="main-header vh-100 position-relative">
     <div class="position-absolute top-0 start-0 w-100 h-100 header-background"></div>
     <div
@@ -89,9 +82,9 @@
     </div>
 </header>
 
+<!-- PRESENTATION -->
 <section class="about-section text-center py-5" id="Profil">
     <div class="container">
-        <!-- Titre de la section -->
         <h2 class="mb-4">Présentation</h2>
         <hr class="w-50 mx-auto mb-4">
         <p class="fs-5">
@@ -105,24 +98,19 @@
             Portfolio, et dans mes <a href="https://github.com/jvlatrille" target="_blank">repos GitHub</a>.
         </p>
 
-        <!-- Blocs d'informations -->
+        <!-- PARCOURS SCOLAIRE, AMBITIONS, ADJECTIFS -->
         <div class="row text-center mt-5">
-            <!-- Bloc Parcours scolaire -->
             <div class="col-md-4 mb-4">
                 <img src="img/scolaire.png" alt="Parcours scolaire" class="img-fluid mb-3"
                     style="max-height: 150px;">
                 <h3>Parcours scolaire</h3>
                 <p>Collège : Errobi, Cambo-les-Bains<br>Lycée : Cassin, Bayonne<br>BUT : Informatique, Anglet</p>
             </div>
-
-            <!-- Bloc Mes ambitions -->
             <div class="col-md-4 mb-4">
                 <img src="img/ambitions.png" alt="Mes ambitions" class="img-fluid mb-3" style="max-height: 150px;">
                 <h3>Mes ambitions</h3>
                 <p>Gagner un maximum d'argent</p>
             </div>
-
-            <!-- Bloc Adjectifs pour me qualifier -->
             <div class="col-md-4 mb-4">
                 <img src="img/adjectifs.png" alt="Adjectifs pour me qualifier" class="img-fluid mb-3"
                     style="max-height: 150px;">
@@ -134,20 +122,20 @@
 </section>
 
 
+<!-- COMPETENCES -->
 <section class="skills-section py-5" id="Competences">
     <div class="container">
-        <!-- Titre de la section -->
         <h2 class="text-center mb-4">Mes compétences</h2>
         <hr class="w-50 mx-auto mb-5">
 
-        <!-- Liste des compétences -->
+        <!-- LANGAGES DE PROG -->
         <h5 class="text-center mb-4">Langages de programmation</h5>
         <hr class="w-25 mx-auto mb-5">
         <div class="row">
             <?php include 'php/affichage_competences.php'; ?>
         </div>
 
-        <!-- Logos des applications -->
+        <!-- APPLICATIONS -->
         <br>
         <h5 class="text-center mb-4">Applications</h5>
         <hr class="w-25 mx-auto mb-5">
@@ -170,7 +158,7 @@
         </script>
 
 
-        <!-- Téléchargement du CV -->
+        <!-- CV -->
         <div class="text-center mt-5">
             <img src="doc/CV.png" alt="CV de Jules VINET LATRILLE" class="img-fluid mb-3" style="max-width: 200px;">
             <br>
@@ -179,7 +167,7 @@
     </div>
 </section>
 
-
+<!-- PORTFOLIO -->
 <section class="projects-section py-5" id="Portfolio">
     <div class="container">
         <h2 class="text-center mb-4">Mon portfolio</h2>
@@ -191,7 +179,7 @@
 </section>
 
 
-<!-- Modèle PopUp -->
+<!-- POPUP D'UN PROJET-->
 <div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="popupTitle" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content p-0 border-0">
@@ -207,8 +195,6 @@
         </div>
     </div>
 </div>
-
-<!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function openPopup(element) {
@@ -225,7 +211,7 @@
     }
 </script>
 
-<!-- Me contacter -->
+<!-- ME CONTACTER -->
 <section class="contact-section py-5" id="MeContacter">
     <div class="container">
         <h2 class="text-center mb-4">Me Contacter</h2>
@@ -234,8 +220,6 @@
             <a href="mailto:julesvinet64@gmail.com">julesvinet64@gmail.com</a>
         </p>
         <hr class="w-50 mx-auto mb-5">
-
-        <!-- Formulaire de contact -->
         <form id="contactForm" class="mx-auto" style="max-width: 600px;" action="php/send_contact.php" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Nom :</label>
@@ -251,12 +235,10 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Envoyer</button>
         </form>
-
-        <!-- Réponse au formulaire -->
         <div id="formResponse" class="text-center mt-4"></div>
     </div>
 
-    <!-- Popup Modal -->
+    <!-- POPUP DE CONFIRMATION D'ENVOIE -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -290,11 +272,8 @@
             const result = await response.json();
 
             if (result.success) {
-                // Affiche le popup de succès
                 const successModal = new bootstrap.Modal(document.getElementById('successModal'));
                 successModal.show();
-
-                // Réinitialise le formulaire
                 this.reset();
                 formResponse.innerHTML = '';
             } else {
@@ -306,19 +285,10 @@
     });
 </script>
 
-
-
-
-
-
-
-<!-- footer -->
+<!-- FOOTER -->
 <footer class="bg-dark text-white py-4">
     <div class="container text-center">
-        <!-- Informations de copyright -->
         <p class="mb-3">&copy; 2024 Jules VINET LATRILLE. Tous droits réservés.</p>
-
-        <!-- Logos des réseaux sociaux -->
         <div class="d-flex justify-content-center gap-3">
             <a href="https://github.com/jvlatrille" target="_blank" aria-label="GitHub">
                 <img src="img/github_logo.png" alt="GitHub" style="width: 40px;">
@@ -330,7 +300,7 @@
     </div>
 </footer>
 
-<!-- Scripts -->
+<!-- SCRIPTS -->
 <script src="js/script.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -5,7 +5,6 @@ if (file_exists($jsonFile)) {
     $applis = json_decode(file_get_contents($jsonFile), true);
 
     if (!empty($applis)) {
-        // Trier les applications par niveau décroissant
         usort($applis, function ($a, $b) {
             return $b['level'] - $a['level'];
         });

@@ -2,10 +2,10 @@
 scss : sass css/style.scss css/style.css --watch  
 */
 
-/* 1. Variables globales dynamiques */
+/* Mode clair */
 body.light-mode {
-  --header-image: url("../img/fond_header_light.jpg"); /* Image pour le mode clair */
-  --logo-image: url("../img/logo_noir.png"); /* Logo noir pour le mode clair */
+  --header-image: url("../img/fond_header_light.jpg");
+  --logo-image: url("../img/logo_noir.png");
   --primary-color: #00aaff;
   --secondary-color: #282c34;
   --background-color: #f4f4f9;
@@ -14,9 +14,10 @@ body.light-mode {
   --progress-circle-color: #00ff00;
 }
 
+/* Mode sombre */
 body.dark-mode {
-  --header-image: url("../img/fond_header_dark.jpg"); /* Image pour le mode sombre */
-  --logo-image: url("../img/logo_blanc.png"); /* Logo blanc pour le mode sombre */
+  --header-image: url("../img/fond_header_dark.jpg");
+  --logo-image: url("../img/logo_blanc.png");
   --primary-color: #ff0000;
   --secondary-color: #444444;
   --background-color: #1a1a1a;
@@ -25,16 +26,20 @@ body.dark-mode {
   --progress-circle-color: #00ff00;
 }
 
-/* 2. Styles globaux */
+/*****************
+   STYLE GLOBAL
+******************/
+// Body
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;
-  transition: all 0.5s ease; /* Transition pour tout le body */
+  transition: all 0.5s ease;
 }
 
+// Textes
 h1,
 h2,
 h3,
@@ -44,7 +49,6 @@ h6 {
   color: var(--primary-color);
   transition: color 0.5s ease;
 }
-
 a {
   color: var(--primary-color);
   transition: color 0.5s ease;
@@ -53,138 +57,12 @@ a {
   }
 }
 
-/* 3. Header */
-/* Navbar */
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1050;
-  transition: all 0.5s ease; /* Transition pour le header */
-
-  // Par défaut : transparent
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  color: white;
-  padding: 1rem 0;
-
-  &.scrolled {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.1)
-    );
-    padding: 0.5rem 0;
-  }
-
-  .navbar-brand img {
-    content: var(--logo-image); /* Variable CSS pour le logo */
-    width: auto; /* Assure une largeur adaptée à l'image */
-    height: 50px; /* Fixe la hauteur à une taille cohérente */
-    max-width: 150px; /* Empêche le logo d'être trop large */
-    object-fit: contain; /* Adapte l'image à sa zone */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition fluide pour le logo */
-  }
-
-  .nav-link {
-    color: white;
-    transition: color 0.5s ease;
-    &:hover {
-      color: var(--primary-color);
-    }
-  }
-}
-
-// Accueil
-#Accueil {
-  background-image: var(--header-image); /* Utilisation de la variable CSS */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--text-color);
-  position: relative;
-  z-index: 1; /* En dessous de la navbar */
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: all 0.5s ease; /* Transition fluide */
-
-  /* Par défaut (mode sombre) */
-  .position-absolute::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Voile noir avec opacité 60% */
-    z-index: 1; /* Le voile est au-dessus de l'image */
-    pointer-events: none; /* Empêche toute interaction avec le voile */
-    transition: background-color 0.5s ease; /* Transition fluide pour le voile */
-  }
-
-  /* Mode clair : supprimer le voile */
-  body.light-mode & .position-absolute::after {
-    background-color: transparent; /* Pas de voile */
-  }
-
-  /* Couleur du texte spécifique au mode clair */
-  body.light-mode & {
-    color: #000; /* Texte noir */
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Pour améliorer la lisibilité */
-    z-index: 2; /* S'assure que le texte est au-dessus */
-    transition: text-shadow 0.5s ease, color 0.5s ease; /* Transition fluide pour le texte */
-  }
-
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Amélioration de contraste */
-    z-index: 2; /* S'assure que le texte est au-dessus */
-    transition: text-shadow 0.5s ease, color 0.5s ease; /* Transition fluide pour le texte */
-  }
-
-  /* Supprimer les ombres sur le texte en mode clair */
-  body.light-mode & h1,
-  body.light-mode & p {
-    text-shadow: none; /* Pas d'ombre en mode clair */
-  }
-}
-
-/* Texte en noir pour le mode clair */
-body.light-mode #Accueil {
-  color: #000; /* Texte noir */
-}
-
-body.light-mode #Accueil h1,
-body.light-mode #Accueil p {
-  color: #000; /* Texte noir forcé */
-  text-shadow: none; /* Supprimer l'ombre */
-}
-
-.header-background {
-  background-image: var(--header-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: all 0.5s ease; /* Transition fluide pour l'image */
-}
-
-/* 4. Sections */
+// Sections
 section {
   padding: 4rem 0;
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide pour les sections */
+  transition: background-color 0.5s ease, color 0.5s ease;
 
   &.about-section,
   &.skills-section,
@@ -199,17 +77,143 @@ section {
 
   h2 {
     color: var(--primary-color);
-    transition: color 0.5s ease; /* Transition fluide pour les titres */
+    transition: color 0.5s ease;
   }
 }
 
-/* Skills Section */
-.skills-section .progress-bar {
-  background-color: var(#ffffff);
-  transition: background-color 0.5s ease; /* Transition fluide pour les barres de progression */
+/**************
+    NAVBAR
+**************/
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  transition: all 0.5s ease;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: white;
+  padding: 1rem 0;
+
+  &.scrolled {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.1)
+    );
+    padding: 0.5rem 0;
+  }
+
+  .navbar-brand img {
+    content: var(--logo-image);
+    width: auto;
+    height: 50px;
+    max-width: 150px;
+    object-fit: contain;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .nav-link {
+    color: white;
+    transition: color 0.5s ease;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 }
 
-/* Styles pour les logos */
+/**************
+    HEADER
+  (accueil)
+**************/
+#Accueil {
+  background-image: var(--header-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-color);
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease;
+
+  .position-absolute::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    pointer-events: none;
+    transition: background-color 0.5s ease;
+  }
+
+  body.light-mode & .position-absolute::after {
+    background-color: transparent;
+  }
+
+  body.light-mode & {
+    color: #000;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    transition: text-shadow 0.5s ease, color 0.5s ease;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: text-shadow 0.5s ease, color 0.5s ease;
+  }
+
+  body.light-mode & h1,
+  body.light-mode & p {
+    text-shadow: none;
+  }
+}
+
+body.light-mode #Accueil {
+  color: #000;
+}
+
+body.light-mode #Accueil h1,
+body.light-mode #Accueil p {
+  color: #000;
+  text-shadow: none;
+}
+
+.header-background {
+  background-image: var(--header-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+}
+
+/*****************
+    COMPETENCES
+******************/
+// Barres de progression
+.skills-section .progress-bar {
+  background-color: var(#ffffff);
+  transition: background-color 0.5s ease;
+}
+
+// Logos des applications
 .skills-section .row .logo-wrapper {
   position: relative;
   overflow: hidden;
@@ -224,11 +228,11 @@ section {
 }
 
 .skills-section .row .logo-wrapper:hover .app-logo {
-  transform: scale(0.9); /* Dézoom léger */
-  filter: brightness(0.7); /* Assombrit l'image */
+  transform: scale(0.9);
+  filter: brightness(0.7);
 }
 
-/* Cercle de progression creux avec transparence */
+// Cercles de progression
 .skills-section .row .progress-circle {
   position: absolute;
   top: 50%;
@@ -243,7 +247,6 @@ section {
   -webkit-mask: radial-gradient(circle, transparent 40%, white 41%);
   transition: opacity 0.3s ease;
 
-  /* Ajout d'un pseudo-élément pour gérer la couleur dynamiquement */
   &::before {
     content: "";
     position: absolute;
@@ -264,10 +267,10 @@ section {
 }
 
 .skills-section .row .logo-wrapper:hover .progress-circle {
-  opacity: 1; /* Rend le cercle visible au survol */
+  opacity: 1;
 }
 
-/* Texte affichant le niveau au centre du cercle */
+// Texte du niveau
 .skills-section .row .progress-text {
   position: absolute;
   top: 50%;
@@ -276,28 +279,20 @@ section {
   font-size: 1rem;
   font-weight: bold;
   color: var(--progress-circle-color);
-  z-index: 2; /* Par-dessus le cercle */
-  opacity: 0; /* Invisible par défaut */
+  z-index: 2;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
+// Visibilité au survol
 .skills-section .row .logo-wrapper:hover .progress-text {
-  opacity: 1; /* Rend le texte visible au survol */
+  opacity: 1;
 }
 
-/* 5. Footer */
-footer {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide pour le footer */
-
-  a {
-    color: var(--primary-color);
-    transition: color 0.5s ease; /* Transition fluide pour les liens du footer */
-  }
-}
-
-/* Projets */
+/**************
+    PORTFOLIO
+**************/
+// Cases
 .project-item {
   overflow: hidden;
   position: relative;
@@ -323,6 +318,7 @@ footer {
   }
 }
 
+// Surimpression
 .overlay {
   position: absolute;
   top: 0;
@@ -349,28 +345,28 @@ footer {
   opacity: 1;
 }
 
-/* Boutons */
+// Clickable
 .btn-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  transition: background-color 0.5s ease, border-color 0.5s ease; /* Transition fluide pour les boutons */
+  transition: background-color 0.5s ease, border-color 0.5s ease;
 
   &:hover {
-    filter: brightness(1.1); /* CSS natif pour simuler lighten() */
+    filter: brightness(1.1);
   }
 }
 
 // Pop Ups
 .modal-fullscreen {
-  background-color: rgba(0, 0, 0, 0.9); /* Assombrit le fond du modal */
-  transition: background-color 0.5s ease; /* Transition fluide */
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.5s ease;
 }
 
 .popup-background {
   position: relative;
   height: 100vh;
   background-color: black;
-  transition: background-color 0.5s ease; /* Transition fluide */
+  transition: background-color 0.5s ease;
 }
 
 .popup-background img {
@@ -389,18 +385,18 @@ footer {
   border-radius: 10px;
   max-width: 400px;
   z-index: 10;
-  transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .popup-text h5 {
   color: var(--primary-color);
   margin-bottom: 1rem;
-  transition: color 0.5s ease; /* Transition fluide */
+  transition: color 0.5s ease;
 }
 
 .popup-text a {
   color: var(--primary-color);
-  transition: color 0.5s ease; /* Transition fluide */
+  transition: color 0.5s ease;
 
   &:hover {
     text-decoration: underline;
@@ -418,5 +414,19 @@ footer {
   &:hover {
     background-color: var(--primary-color);
     color: black;
+  }
+}
+
+/**************
+    FOOTER
+**************/
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  a {
+    color: var(--primary-color);
+    transition: color 0.5s ease;
   }
 }
